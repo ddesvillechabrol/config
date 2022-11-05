@@ -1,2 +1,10 @@
 vim/.config/nvim/plugin/packer_compiled.lua
+#fish/.config/fish/completions
+#fish/.config/fish/conf.d
+#fish/.config/fish/themes
+#fish/.config/fish/fish_plugins
+#fish/.config/fish/fish_variables
+fish/.config/fish/*
+!fish/.config/fish/config.fish
+!fish/.config/fish/function/fish_prompt.fish
 
