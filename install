@@ -1,0 +1,117 @@
+#!/bin/bash
+
+## Usage: install [OPTIONS]
+##
+## Script to install my config with alacritty, fish, tmux and nvim.
+## Stow is needed to complete configs installation.
+
+SOURCE=${BASH_SOURCE[0]}
+HELP=$(grep "^## " "${SOURCE}" | cut -c 4-)
+
+# Transform long options to short ones
+for arg in "$@"; do
+  shift
+  case "$arg" in
+      "--install-all") set -- "-a";;
+      "--install-fish") set -- "-e";;
+      "--install-fonts") set -- "-f";;
+      "--install-deps") set -- "-i";;
+      "--install-lsp") set -- "-l";;
+      "--is-mac") set -- "$@" "-m";;
+      "--help") set -- "$@" "-h";;
+      *) set -- "$@" "$arg" ;;
+  esac
+done
+
+while getopts "aldefmh" optchar; do
+  case $optchar in
+    a)
+      INSTALL_DEPS=TRUE
+      INSTALL_LSP=TRUE
+      INSTALL_FONTS=TRUE
+      ;;
+    d)
+      INSTALL_DEPS=TRUE
+      ;;
+    l)
+      INSTALL_LSP=TRUE
+      ;;
+    f)
+      INSTALL_FONTS=TRUE
+      ;;
+    e)
+      INSTALL_FISHDEPS=TRUE
+      ;;
+    m)
+      MAC=TRUE
+      ;;
+    h)
+      echo "${HELP}"
+      ;;
+    *)
+      echo "Invalid option: --${optchar}" >&2
+      echo "${HELP}"
+      exit 1
+      ;;
+  esac
+done
+
+if [[ -n $INSTALL_DEPS ]]; then
+  # install systems dependencies for mac or ubuntu
+  if [[ -z $MAC ]]; then
+    brew install stow tmux
+  else
+    apt-add-repository ppa:fish-shell/release-3
+    apt update
+    apt install -y stow cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+    apt install -y shellcheck fdfind bat fzf fish tmux stow
+    update-alternatives --install /usr/bin/fd fd /usr/bin/fdfind 60
+    update-alternatives --install /usr/bin/bat bat /usr/bin/batcat 60
+  fi
+  # install alacritty
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  rustup override set stable
+  rustup update stable
+  cargo install alacritty
+fi
+
+if [[ -n $INSTALL_LSP ]]; then
+  # install volta to handle node version
+  curl https://get.volta.sh | bash && volta install node
+  # install all langserver needed for my stack
+  npm install -g pyright
+  npm install -g vscode-langservers-extracted
+  npm install -g @tailwindcss/language-server
+  npm install -g typescript typescript-language-server
+  npm install -g bash-language-server
+fi
+
+# TODO not working actually 
+if [[ -n $INSTALL_FISHDEPS ]]; then
+  # install fisher
+  curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+  # install fish plugins
+  fisher install PatrickF1/fzf.fish
+  fisher install jorgebucaran/autopair.fish
+  fisher install catppuccin/fish
+  fisher install danhper/fish-ssh-agent
+  fish_config theme save "Catppuccin Macchiato"
+fi
+
+if [[ -n $INSTALL_FONTS ]]; then
+  curl -sSL https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/VictorMono.zip | unzip -
+  curl -sSL https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/FiraCode.zip | unzip -
+  if [[ -z $MAC ]]; then
+    cp VictorMono/*Complete.ttf /usr/local/share/fonts/truetype/
+    cp FiraCode/*Complete.ttf /usr/local/share/fonts/truetype/
+    fc-cache -fv
+  fi
+fi
+
+CONF_FOLDERS=("alacritty" "fish" "vim" "tmux")
+for folder in "${CONF_FOLDERS[@]}"; do
+  echo "Stow $folder"
+  stow -D "$folder"
+  stow "$folder"
+done
+
