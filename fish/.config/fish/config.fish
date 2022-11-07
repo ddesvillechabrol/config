@@ -2,7 +2,7 @@ set -gx TERM "xterm-256color"
 set fish_prompt_pwd_dir_length 3
 
 # set anaconda
-source /home/desvillechabrol/miniconda3/etc/fish/conf.d/conda.fish 
+source "$HOME/miniconda3/etc/fish/conf.d/conda.fish"
 
 # set pyenv
 set -gx PATH "$HOME/.pyenv/bin" $PATH
