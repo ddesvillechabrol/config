@@ -50,6 +50,6 @@ vim.opt.clipboard = "unnamedplus"
 
 vim.api.nvim_create_autocmd(
   {"BufNewFile", "BufRead"},
-  { pattern = {"Snakefile", "*.smk", ".rules"}, command = "set filetype=snakemake nofoldenable"}
+  { pattern = {"Snakefile", "*.smk", ".rules"}, command = "set filetype=snakemake nofoldenable shiftwidth=4 tabstop=4"}
 )
 
