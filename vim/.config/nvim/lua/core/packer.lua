@@ -13,6 +13,9 @@ return require('packer').startup(function(use)
   use "saadparwaiz1/cmp_luasnip"
   use "windwp/nvim-autopairs"
   use "windwp/nvim-ts-autotag"
+  use "tpope/vim-surround"
+  use "tpope/vim-repeat"
+  use "Yggdroot/indentLine"
 
   -- git
   use "lewis6991/gitsigns.nvim"

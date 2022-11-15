@@ -18,7 +18,7 @@ neogit.setup {
 }
 
 nnoremap("<leader>gs", function()
-    neogit.open()
+  neogit.open()
 end)
 nnoremap("<leader>vv", ":DiffviewOpen<CR>")
 nnoremap("<leader>vc", ":DiffviewClose<CR>")

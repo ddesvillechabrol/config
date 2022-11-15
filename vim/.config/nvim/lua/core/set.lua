@@ -48,6 +48,11 @@ vim.g.mapleader = " "
 
 vim.opt.clipboard = "unnamedplus"
 
+vim.g.indentLine_enabled = true
+vim.g.indentLine_concealcursor = ""
+vim.g.indentLine_char = "┆"
+vim.g.indentLine_faster = true
+
 vim.api.nvim_create_autocmd(
   {"BufNewFile", "BufRead"},
   { pattern = {"Snakefile", "*.smk", ".rules"}, command = "set filetype=snakemake nofoldenable shiftwidth=4 tabstop=4"}
