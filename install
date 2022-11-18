@@ -83,6 +83,7 @@ if [[ -n $INSTALL_LSP ]]; then
   npm install -g vscode-langservers-extracted
   npm install -g @tailwindcss/language-server
   npm install -g typescript typescript-language-server
+  npm install -g @fsouza/prettierd
   npm install -g bash-language-server
 fi
 

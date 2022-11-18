@@ -115,3 +115,10 @@ require("lspconfig").tailwindcss.setup(config())
 
 require("lspconfig").bashls.setup(config())
 
+require("null-ls").setup {
+  sources = {
+    require("null-ls").builtins.formatting.prettierd,
+    require("null-ls").builtins.formatting.isort,
+    require("null-ls").builtins.formatting.black,
+  },
+}
