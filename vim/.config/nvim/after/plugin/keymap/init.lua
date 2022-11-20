@@ -36,7 +36,7 @@ nnoremap("<C-S-Down>", ":bnext<CR>")
 nnoremap("<C-S-Up>", ":bprevious<CR>")
 
 -- Close buffer
-nnoremap("<C-c>", ":bp|bd #<CR>")
+-- nnoremap("<C-c>", ":bp|bd #<CR>")
 
 -- Switch between windows
 nnoremap("<C-j>", "<C-w>j")

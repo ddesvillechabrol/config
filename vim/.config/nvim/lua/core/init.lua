@@ -1,6 +1,7 @@
 require("core.packer")
 require("core.set")
 require("core.git")
+require("core.telescope")
 
 require("nvim-tree").setup()
 require("zen-mode").setup({
