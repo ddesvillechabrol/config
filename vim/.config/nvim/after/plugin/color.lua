@@ -22,7 +22,13 @@ require("catppuccin").setup({
         operators = {},
     },
     color_overrides = {},
-    custom_highlights = {},
+    -- https://github.com/catppuccin/nvim/blob/main/lua/catppuccin/groups/editor.lua
+    custom_highlights = function(colors)
+      return {
+        LineNr = { fg = colors.overlay1 },
+        CursorLineNr = { fg = colors.flamingo },
+      }
+    end,
     integrations = {
         cmp = true,
         gitsigns = true,
@@ -32,8 +38,20 @@ require("catppuccin").setup({
         treesitter_context = true,
         ts_rainbow = true,
         lsp_trouble = true,
+        indent_blankline = {
+          enabled = true,
+          colored_indent_levels = false,
+        },
     },
 })
+
+
+vim.cmd [[highlight IndentBlanklineIndent guifg=#8087a2 gui=nocombine]]
+require("indent_blankline").setup {
+  char_highlight_list = {
+    "IndentBlanklineIndent",
+  }
+}
 
 vim.cmd("colorscheme catppuccin")
 

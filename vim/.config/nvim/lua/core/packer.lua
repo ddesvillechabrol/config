@@ -15,7 +15,7 @@ return require('packer').startup(function(use)
   use "windwp/nvim-ts-autotag"
   use "tpope/vim-surround"
   use "tpope/vim-repeat"
-  use "Yggdroot/indentLine"
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- git
   use "lewis6991/gitsigns.nvim"
@@ -36,6 +36,7 @@ return require('packer').startup(function(use)
   use {"catppuccin/nvim", as = "catppuccin"}
   use "nvim-lualine/lualine.nvim"
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+  -- use 'nvim-treesitter/playground'
   use "nvim-treesitter/nvim-treesitter-context"
   use {"snakemake/snakemake", rtp = "misc/vim/"}
   use "rbberger/vim-singularity-syntax"

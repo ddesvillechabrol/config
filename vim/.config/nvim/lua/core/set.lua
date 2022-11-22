@@ -6,6 +6,7 @@ vim.opt.guicursor = ""
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.opt.cursorline = true
 
 vim.opt.errorbells = false
 
@@ -47,11 +48,6 @@ vim.opt.colorcolumn = "120"
 vim.g.mapleader = " "
 
 vim.opt.clipboard = "unnamedplus"
-
-vim.g.indentLine_enabled = true
-vim.g.indentLine_concealcursor = ""
-vim.g.indentLine_char = "┆"
-vim.g.indentLine_faster = true
 
 vim.api.nvim_create_autocmd(
   {"BufNewFile", "BufRead"},
