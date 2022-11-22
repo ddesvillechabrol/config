@@ -6,7 +6,7 @@ require("core.telescope")
 require("nvim-tree").setup()
 require("zen-mode").setup({
   window = {
-    width = 0.7,
+    width = 0.6,
   }
 })
 require("lualine").setup {

@@ -29,10 +29,11 @@ require("catppuccin").setup({
         nvimtree = true,
         telescope = true,
         treesitter = true,
+        treesitter_context = true,
         ts_rainbow = true,
+        lsp_trouble = true,
     },
 })
 
-vim.opt.background = "dark"
 vim.cmd("colorscheme catppuccin")
 

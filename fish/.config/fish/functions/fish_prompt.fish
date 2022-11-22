@@ -2,23 +2,23 @@
 set -g __fish_git_prompt_show_informative_status 1
 set -g __fish_git_prompt_hide_untrackedfiles 1
 
-set -g __fish_git_prompt_color_branch af87ff
+set -g __fish_git_prompt_color_branch c6a0f6
 set -g __fish_git_prompt_showupstream "informative"
 set -g __fish_git_prompt_char_upstream_ahead "↑"
 set -g __fish_git_prompt_char_upstream_behind "↓"
 set -g __fish_git_prompt_char_upstream_prefix ""
 
 set -g __fish_git_prompt_char_stagedstate "●"
-set -g __fish_git_prompt_char_dirtystate "✚"
+set -g __fish_git_prompt_char_dirtystate ""
 set -g __fish_git_prompt_char_untrackedfiles "…"
-set -g __fish_git_prompt_char_conflictedstate "✖"
+set -g __fish_git_prompt_char_conflictedstate ""
 set -g __fish_git_prompt_char_cleanstate "✔"
 
-set -g __fish_git_prompt_color_dirtystate 62D8F1
-set -g __fish_git_prompt_color_stagedstate ffff87
-set -g __fish_git_prompt_color_invalidstate red
+set -g __fish_git_prompt_color_dirtystate 91d7e3
+set -g __fish_git_prompt_color_stagedstate eed49f
+set -g __fish_git_prompt_color_invalidstate ed8796
 set -g __fish_git_prompt_color_untrackedfiles $fish_color_normal
-set -g __fish_git_prompt_color_cleanstate A4E400
+set -g __fish_git_prompt_color_cleanstate a6da95
 
 function fish_prompt --description 'Write out the prompt'
 	set -l color_cwd
