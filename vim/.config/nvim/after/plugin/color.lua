@@ -25,7 +25,7 @@ require("catppuccin").setup({
     -- https://github.com/catppuccin/nvim/blob/main/lua/catppuccin/groups/editor.lua
     custom_highlights = function(colors)
       return {
-        LineNr = { fg = colors.overlay1 },
+        LineNr = { fg = colors.surface2 },
         CursorLineNr = { fg = colors.flamingo },
       }
     end,
@@ -46,7 +46,9 @@ require("catppuccin").setup({
 })
 
 
-vim.cmd [[highlight IndentBlanklineIndent guifg=#8087a2 gui=nocombine]]
+local colors = require("catppuccin.palettes").get_palette("macchiato")
+
+vim.cmd(string.format([[highlight IndentBlanklineIndent guifg=%s gui=nocombine]], colors.surface2))
 require("indent_blankline").setup {
   char_highlight_list = {
     "IndentBlanklineIndent",

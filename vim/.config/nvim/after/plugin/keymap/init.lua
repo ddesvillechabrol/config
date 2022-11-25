@@ -17,9 +17,6 @@ nmap("<leader>Y", "\"+Y")
 nnoremap("<leader>d", "\"_d")
 vnoremap("<leader>d", "\"_d")
 
--- This is going to get me cancelled
-inoremap("<C-c>", "<Esc>")
-
 nnoremap("Q", "<nop>")
 nnoremap("<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 nnoremap("<leader>f", function()
@@ -45,8 +42,8 @@ nnoremap("<C-l>", "<C-w>l")
 nnoremap("<C-h>", "<C-w>h")
 
 -- nvim-tree
-nnoremap("<C-n>", ":NvimTreeToggle<CR>")
+nnoremap("<C-n>", "<cmd>NvimTreeToggle<CR>")
 
 -- nvim-zen
-nnoremap("<Leader>z", ":ZenMode<CR>")
+nnoremap("<Leader>z", "<cmd>ZenMode<CR>")
 

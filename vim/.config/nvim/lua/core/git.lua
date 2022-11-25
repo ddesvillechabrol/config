@@ -20,6 +20,7 @@ neogit.setup {
 nnoremap("<leader>gs", function()
   neogit.open()
 end)
+nnoremap("<leader>gh", ":DiffviewFileHistory %<CR>")
 nnoremap("<leader>vv", ":DiffviewOpen<CR>")
 nnoremap("<leader>vc", ":DiffviewClose<CR>")
 nnoremap("<leader>ga", "<cmd>!git fetch --all<CR>")

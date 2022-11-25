@@ -7,13 +7,15 @@ require("telescope").setup({
 		color_devicons = true,
 		mappings = {
 			i = {
-        ["<C-c>"] = actions.delete_buffer,
 				["<C-x>"] = false,
-				["<C-q>"] = actions.send_to_qflist,
+        ["<C-q>"] = actions.send_to_qflist,
         ["<CR>"] = actions.select_default,
-			},
-		},
-	},
+      },
+      n = {
+        ["<C-d>"] = actions.delete_buffer,
+      }
+    },
+  },
     --[[
 	extensions = {
 		fzy_native = {

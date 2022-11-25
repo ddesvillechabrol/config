@@ -85,6 +85,7 @@ if [[ -n $INSTALL_LSP ]]; then
   npm install -g typescript typescript-language-server
   npm install -g @fsouza/prettierd
   npm install -g bash-language-server
+  npm install -g jsonlint
 fi
 
 # TODO not working actually 

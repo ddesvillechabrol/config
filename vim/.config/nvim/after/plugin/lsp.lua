@@ -115,10 +115,15 @@ require("lspconfig").tailwindcss.setup(config())
 
 require("lspconfig").bashls.setup(config())
 
+local formatting = require("null-ls").builtins.formatting
+local diagnostics = require("null-ls").builtins.diagnostics
+
 require("null-ls").setup {
   sources = {
-    require("null-ls").builtins.formatting.prettierd,
-    require("null-ls").builtins.formatting.isort,
-    require("null-ls").builtins.formatting.black,
+    formatting.prettierd,
+    formatting.black.with({ extra_args = { "--line-length", "120" } }),
+    formatting.isort.with({ extra_args = { "--profile", "black" } }),
+    diagnostics.flake8.with({ extra_args = { "--extend-ignore", "E402,W503", "--max-line-length", "120"} }),
+    diagnostics.jsonlint,
   },
 }

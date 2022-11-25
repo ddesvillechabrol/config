@@ -16,6 +16,8 @@ return require('packer').startup(function(use)
   use "tpope/vim-surround"
   use "tpope/vim-repeat"
   use "lukas-reineke/indent-blankline.nvim"
+  use "leafgarland/typescript-vim"
+  use "peitalin/vim-jsx-typescript"
 
   -- git
   use "lewis6991/gitsigns.nvim"

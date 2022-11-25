@@ -12,8 +12,8 @@ local colors = require("catppuccin.palettes").get_palette("macchiato")
 
 vim.api.nvim_set_hl(0, "@tag.attribute.tsx", { fg = colors.blue })
 vim.api.nvim_set_hl(0, "@include.tsx", { fg = colors.sky, bold = true })
-vim.api.nvim_set_hl(0, "@keyword.tsx", { fg = colors.red })
-vim.api.nvim_set_hl(0, "@keyword.function.tsx", { fg = colors.red })
+vim.api.nvim_set_hl(0, "@keyword.tsx", { fg = colors.red, italic = true })
+vim.api.nvim_set_hl(0, "@keyword.function.tsx", { fg = colors.red, italic = true })
 vim.api.nvim_set_hl(0, "@constructor.tsx", { fg = colors.peach })
 
 vim.api.nvim_set_hl(0, "@tag.attribute.typescript", { fg = colors.blue })
