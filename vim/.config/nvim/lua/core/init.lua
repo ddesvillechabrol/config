@@ -3,7 +3,9 @@ require("core.set")
 require("core.git")
 require("core.telescope")
 
-require("nvim-tree").setup()
+require("nvim-tree").setup({
+  sync_root_with_cwd = true,
+})
 require("zen-mode").setup({
   window = {
     width = 0.6,

@@ -4,7 +4,12 @@ require'nvim-treesitter.configs'.setup {
 
     highlight = {
         enable = true,
-        additional_vim_regex_highlighting = false,
+        -- I had some indent bug without vim regex highlighting in python
+        additional_vim_regex_highlighting = { "python" },
+    },
+    indent = {
+      enable = true,
+      disable = { python, typescript, tsx }
     }
 }
 

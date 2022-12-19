@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
   use "lukas-reineke/indent-blankline.nvim"
   use "leafgarland/typescript-vim"
   use "peitalin/vim-jsx-typescript"
+  use "Vimjas/vim-python-pep8-indent"
 
   -- git
   use "lewis6991/gitsigns.nvim"

@@ -97,7 +97,7 @@ require("lspconfig").pyright.setup(config({
       analysis = {
         useLibraryCodeForTypes = true,
         diagnosticSeverityOverrides = {
-          reportGeneralTypeIssues = "none",
+          reportGeneralTypeIssues = "basic",
           reportOptionalMemberAccess = "none",
           reportOptionalSubscript = "none",
           reportPrivateImportUsage = "none",
