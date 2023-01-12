@@ -9,6 +9,7 @@ end
 
 local luasnip = require("luasnip")
 local cmp = require("cmp")
+local lsp = require("lspconfig")
 cmp.setup({
   snippet = {
     -- REQUIRED - you must specify a snippet engine
@@ -91,7 +92,7 @@ local function config(_config)
   }, _config or {})
 end
 
-require("lspconfig").pyright.setup(config({
+lsp.pyright.setup(config({
   settings= { 
     python = {
       analysis = {
@@ -107,13 +108,15 @@ require("lspconfig").pyright.setup(config({
   }
 }))
 
-require("lspconfig").tsserver.setup(config())
+lsp.tsserver.setup(config())
 
-require("lspconfig").eslint.setup(config())
+lsp.eslint.setup(config())
 
-require("lspconfig").tailwindcss.setup(config())
+lsp.tailwindcss.setup(config())
 
-require("lspconfig").bashls.setup(config())
+lsp.bashls.setup(config())
+
+lsp.rust_analyzer.setup(config())
 
 local formatting = require("null-ls").builtins.formatting
 local diagnostics = require("null-ls").builtins.diagnostics
@@ -123,6 +126,7 @@ require("null-ls").setup {
     formatting.prettierd,
     formatting.black.with({ extra_args = { "--line-length", "120" } }),
     formatting.isort.with({ extra_args = { "--profile", "black" } }),
+    formatting.rustfmt,
     diagnostics.flake8.with({ extra_args = { "--extend-ignore", "E402,W503", "--max-line-length", "120"} }),
     diagnostics.jsonlint,
   },

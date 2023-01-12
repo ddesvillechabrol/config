@@ -59,15 +59,17 @@ done
 if [[ -n $INSTALL_DEPS ]]; then
   # install systems dependencies for mac or ubuntu
   if [[ -z $MAC ]]; then
-    brew install stow tmux
+    brew install stow tmux ripgrep
   else
     apt-add-repository ppa:fish-shell/release-3
     apt update
-    apt install -y stow cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
-    apt install -y shellcheck fdfind bat fzf fish tmux stow
+    apt install -y cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+    apt install -y shellcheck fdfind bat fzf fish tmux stow ripgrep
     update-alternatives --install /usr/bin/fd fd /usr/bin/fdfind 60
     update-alternatives --install /usr/bin/bat bat /usr/bin/batcat 60
   fi
+  # install tpm
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   # install alacritty
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   rustup override set stable
@@ -86,9 +88,12 @@ if [[ -n $INSTALL_LSP ]]; then
   npm install -g @fsouza/prettierd
   npm install -g bash-language-server
   npm install -g jsonlint
+  rustup component add rust-analyzer
+  ln -s "$(rustup which --toolchain stable rust-analyzer)" "$HOME/.cargo/bin"
+  rustup component add rustfmt
 fi
 
-# TODO not working actually 
+# TODO not working actually with fish
 if [[ -n $INSTALL_FISHDEPS ]]; then
   # install fisher
   curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher

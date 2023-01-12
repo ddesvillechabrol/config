@@ -7,6 +7,7 @@ source "$HOME/miniconda3/etc/fish/conf.d/conda.fish"
 # set pyenv
 set -gx PATH "$HOME/.pyenv/bin" $PATH
 pyenv init - | source
+pyenv virtualenv-init - | source
 
 # set rust
 set -gx PATH "$HOME/.cargo/bin" $PATH
