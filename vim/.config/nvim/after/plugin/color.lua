@@ -1,5 +1,7 @@
+local flavour = "macchiato"
+
 require("catppuccin").setup({
-    flavour = "macchiato", -- latte, frappe, macchiato, mocha
+    flavour = flavour, -- latte, frappe, macchiato, mocha
     transparent_background = true,
     term_colors = false,
     dim_inactive = {
@@ -30,6 +32,7 @@ require("catppuccin").setup({
       }
     end,
     integrations = {
+        neogit = true,
         cmp = true,
         gitsigns = true,
         nvimtree = true,
@@ -45,7 +48,7 @@ require("catppuccin").setup({
 })
 
 
-local colors = require("catppuccin.palettes").get_palette("macchiato")
+local colors = require("catppuccin.palettes").get_palette(flavour)
 
 vim.cmd(string.format([[highlight IndentBlanklineIndent guifg=%s gui=nocombine]], colors.surface2))
 require("indent_blankline").setup {
@@ -53,6 +56,19 @@ require("indent_blankline").setup {
     "IndentBlanklineIndent",
   }
 }
+
+vim.api.nvim_set_hl(0, "@tag.attribute.tsx", { fg = colors.blue })
+vim.api.nvim_set_hl(0, "@include.tsx", { fg = colors.sky, bold = true })
+vim.api.nvim_set_hl(0, "@keyword.tsx", { fg = colors.red, italic = true })
+vim.api.nvim_set_hl(0, "@keyword.function.tsx", { fg = colors.red, italic = true })
+vim.api.nvim_set_hl(0, "@constructor.tsx", { fg = colors.peach })
+
+vim.api.nvim_set_hl(0, "@tag.attribute.typescript", { fg = colors.blue })
+vim.api.nvim_set_hl(0, "@include.typescript", { fg = colors.sky, bold = true })
+vim.api.nvim_set_hl(0, "@keyword.export.typescript", { fg = colors.sky, bold = true })
+vim.api.nvim_set_hl(0, "@keyword.typescript", { fg = colors.red })
+vim.api.nvim_set_hl(0, "@keyword.function.typescript", { fg = colors.red })
+vim.api.nvim_set_hl(0, "@constructor.typescript", { fg = colors.peach })
 
 vim.cmd("colorscheme catppuccin")
 
