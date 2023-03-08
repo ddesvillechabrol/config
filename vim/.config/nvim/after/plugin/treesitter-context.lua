@@ -33,6 +33,7 @@ function ContextSetup(show_all_context)
                 "else_clause",
             },
         },
+        zindex = 50,
     })
 end
 

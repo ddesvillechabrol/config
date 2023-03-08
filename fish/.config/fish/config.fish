@@ -1,6 +1,9 @@
 set -gx TERM "xterm-256color"
 set fish_prompt_pwd_dir_length 3
 
+# set lazygit
+set -gx LG_CONFIG_FILE $HOME/.config/lazygit/config.yml
+
 # set anaconda
 source "$HOME/miniconda3/etc/fish/conf.d/conda.fish"
 
