@@ -92,6 +92,8 @@ local function config(_config)
   }, _config or {})
 end
 
+lsp.ruff_lsp.setup(config())
+
 lsp.pyright.setup(config({
   settings= { 
     python = {
@@ -125,9 +127,8 @@ require("null-ls").setup {
   sources = {
     formatting.prettierd,
     formatting.black.with({ extra_args = { "--line-length", "120" } }),
-    formatting.isort.with({ extra_args = { "--profile", "black" } }),
     formatting.rustfmt,
-    diagnostics.flake8.with({ extra_args = { "--extend-ignore", "E402,W503", "--max-line-length", "120"} }),
+    formatting.ruff,
     diagnostics.jsonlint,
   },
 }

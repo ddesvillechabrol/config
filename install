@@ -63,8 +63,8 @@ if [[ -n $INSTALL_DEPS ]]; then
   else
     apt-add-repository ppa:fish-shell/release-3
     apt update
-    apt install -y cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
-    apt install -y shellcheck fdfind bat fzf fish tmux stow ripgrep
+    apt install -y cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev
+    apt install -y shellcheck fdfind bat fzf fish tmux stow ripgrep python3 python3-pip
     update-alternatives --install /usr/bin/fd fd /usr/bin/fdfind 60
     update-alternatives --install /usr/bin/bat bat /usr/bin/batcat 60
   fi
@@ -91,6 +91,7 @@ if [[ -n $INSTALL_LSP ]]; then
   rustup component add rust-analyzer
   ln -s "$(rustup which --toolchain stable rust-analyzer)" "$HOME/.cargo/bin"
   rustup component add rustfmt
+  pip install --user ruff-lsp
 fi
 
 # TODO not working actually with fish

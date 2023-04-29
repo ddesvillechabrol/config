@@ -26,14 +26,13 @@ font:
     family: VictorMono Nerd Font
     style: SemiBold Italic
 
-  size: 13
+  size: 12
 
 import:
-  - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
+  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
 
 key_bindings:
   - { key: Space, mods: Control, chars: "\x00" }
   - { key: F, mods: Control|Alt, chars: "\x1b\x06" }
   - { key: L, mods: Control|Alt, chars: "\x1b\x0c" }
   - { key: S, mods: Control|Alt, chars: "\x1b\x13" }
-
