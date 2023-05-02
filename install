@@ -117,7 +117,7 @@ if [[ -n $INSTALL_FONTS ]]; then
   fi
 fi
 
-CONF_FOLDERS=("alacritty" "fish" "vim" "tmux" "starship")
+CONF_FOLDERS=("alacritty" "fish" "vim" "tmux" "starship" "lazygit")
 for folder in "${CONF_FOLDERS[@]}"; do
   echo "Stow $folder"
   stow -D "$folder"

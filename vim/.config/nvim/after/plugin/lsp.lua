@@ -95,7 +95,7 @@ end
 lsp.ruff_lsp.setup(config())
 
 lsp.pyright.setup(config({
-  settings= { 
+  settings = {
     python = {
       analysis = {
         useLibraryCodeForTypes = true,
