@@ -8,8 +8,11 @@ require("nvim-tree").setup({
 })
 require("zen-mode").setup({
   window = {
-    width = 0.6,
-  }
+    width = 0.7,
+  },
+  plugins = {
+    gitsigns = { enabled = true },
+  },
 })
 require("lualine").setup {
     options = {
