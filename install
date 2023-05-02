@@ -75,6 +75,7 @@ if [[ -n $INSTALL_DEPS ]]; then
   rustup override set stable
   rustup update stable
   cargo install alacritty
+  cargo install starship --locked
 fi
 
 if [[ -n $INSTALL_LSP ]]; then
@@ -116,7 +117,7 @@ if [[ -n $INSTALL_FONTS ]]; then
   fi
 fi
 
-CONF_FOLDERS=("alacritty" "fish" "vim" "tmux")
+CONF_FOLDERS=("alacritty" "fish" "vim" "tmux" "starship")
 for folder in "${CONF_FOLDERS[@]}"; do
   echo "Stow $folder"
   stow -D "$folder"

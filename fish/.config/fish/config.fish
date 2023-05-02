@@ -1,5 +1,6 @@
 set -gx TERM "xterm-256color"
 set fish_prompt_pwd_dir_length 3
+starship init fish | source
 
 # set lazygit
 set -gx LG_CONFIG_FILE $HOME/.config/lazygit/config.yml

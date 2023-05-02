@@ -1,4 +1,4 @@
-local flavour = "macchiato"
+local flavour = "mocha"
 
 require("catppuccin").setup({
     flavour = flavour, -- latte, frappe, macchiato, mocha
