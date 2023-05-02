@@ -64,6 +64,17 @@ def main():
                 alacritty_text.append(line.rstrip())
     alacritty_conf.write_text("\n".join(alacritty_text))
 
+    # Starship
+    starship_conf = Path(f"{dotfiledir}/starship/.config/starship.toml")
+    starship_text = []
+    with open(starship_conf, "r") as filin:
+        for line in filin:
+            if 'palette = "catppuccin' in line:
+                starship_text.append(f'palette = "catppuccin_{args.flavour}"')
+            else:
+                starship_text.append(line.rstrip())
+    starship_conf.write_text("\n".join(starship_text))
+
     # fish
     subprocess.run(
         ["fish", "-c", f'fish_config theme save "Catppuccin {args.flavour.capitalize()}"'],
