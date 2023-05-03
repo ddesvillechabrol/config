@@ -7,26 +7,27 @@ palette = "catppuccin_mocha"
 add_newline = true
 
 [character]
-success_symbol = '[➜](mauve)'
-error_symbol = '[✗](bold red)'
+success_symbol = '[󰽰](mauve)'
+error_symbol = '[✗](red)'
 
 [directory]
 truncation_length = 5
 style = "bold teal"
+read_only = " "
 
 [git_branch]
 style = 'bold pink'
 
 [git_status]
 format = '([\($stashed$untracked$conflicted$deleted$renamed$modified$staged$ahead_behind\)]($style) )'
-up_to_date = '[✔](green)'
-modified = '[${count}](sky)'
-untracked = '🤷'
-staged = '[●${count}](yellow)'
-conflicted = '[${count}](red)'
-stashed = '📦'
-renamed = '👅${count}'
-deleted = '🗑️${count}'
+up_to_date = '[](green)'
+modified = '[${count}󰏫 ](sky)'
+untracked = '[ ](mauve)'
+staged = '[${count} ](yellow)'
+conflicted = '[${count}󰞇 ](red)'
+stashed = '[󰏗 ](maroon)'
+renamed = '[${count}󰨗 ](peach)'
+deleted = '${count} '
 ahead = '[↑${count}](flamingo)'
 diverged = '[↑${ahead_count}↓${behind_count}](flamingo)'
 behind = '[↓${count}](flamingo)'
@@ -34,6 +35,9 @@ behind = '[↓${count}](flamingo)'
 # Disable the package module, hiding it from the prompt completely
 [package]
 disabled = true
+
+[python]
+symbol = '󰌠 '
 
 [palettes.catppuccin_frappe]
 rosewater = "#f2d5cf"

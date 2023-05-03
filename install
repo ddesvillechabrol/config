@@ -108,8 +108,8 @@ if [[ -n $INSTALL_FISHDEPS ]]; then
 fi
 
 if [[ -n $INSTALL_FONTS ]]; then
-  curl -sSL https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/VictorMono.zip | unzip -
-  curl -sSL https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/FiraCode.zip | unzip -
+  curl -sSL https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/VictorMono.zip | unzip -
+  curl -sSL https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/FiraCode.zip | unzip -
   if [[ -z $MAC ]]; then
     cp VictorMono/*Complete.ttf /usr/local/share/fonts/truetype/
     cp FiraCode/*Complete.ttf /usr/local/share/fonts/truetype/
