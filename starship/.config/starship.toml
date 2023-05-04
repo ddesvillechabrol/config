@@ -16,7 +16,7 @@ style = "bold teal"
 read_only = " "
 
 [git_branch]
-style = 'bold pink'
+style = 'bold italic pink'
 
 [git_status]
 format = '([\($stashed$untracked$conflicted$deleted$renamed$modified$staged$ahead_behind\)]($style) )'
