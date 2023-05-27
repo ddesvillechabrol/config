@@ -29,6 +29,7 @@ require("catppuccin").setup({
       return {
         LineNr = { fg = colors.surface2 },
         CursorLineNr = { fg = colors.flamingo },
+        CursorLine = { bg = colors.none },
       }
     end,
     integrations = {

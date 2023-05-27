@@ -108,11 +108,11 @@ if [[ -n $INSTALL_FISHDEPS ]]; then
 fi
 
 if [[ -n $INSTALL_FONTS ]]; then
-  curl -sSL https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/VictorMono.zip | unzip -
-  curl -sSL https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/FiraCode.zip | unzip -
+  mkdir VictorMono && curl -sSLO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/VictorMono.zip && unzip VictorMono.zip -d VictorMono
+  mkdir FiraCode && curl -sSL https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/FiraCode.zip && unzip FiraCode.zip -d FiraCode
   if [[ -z $MAC ]]; then
-    cp VictorMono/*Complete.ttf /usr/local/share/fonts/truetype/
-    cp FiraCode/*Complete.ttf /usr/local/share/fonts/truetype/
+    cp VictorMono/*.ttf /usr/local/share/fonts/truetype/
+    cp FiraCode/*.ttf /usr/local/share/fonts/truetype/
     fc-cache -fv
   fi
 fi
