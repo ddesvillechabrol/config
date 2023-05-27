@@ -1,6 +1,8 @@
 #!/bin/bash
 
 ## Usage: install [OPTIONS]
+## DOES NOT WORK
+## But you can use it to install tools by hand
 ##
 ## Script to install my config with alacritty, fish, tmux and nvim.
 ## Stow is needed to complete configs installation.
@@ -104,12 +106,12 @@ if [[ -n $INSTALL_FISHDEPS ]]; then
   fisher install jorgebucaran/autopair.fish
   fisher install catppuccin/fish
   fisher install danhper/fish-ssh-agent
-  fish_config theme save "Catppuccin Macchiato"
+  fish_config theme save "Catppuccin Mocha"
 fi
 
 if [[ -n $INSTALL_FONTS ]]; then
   mkdir VictorMono && curl -sSLO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/VictorMono.zip && unzip VictorMono.zip -d VictorMono
-  mkdir FiraCode && curl -sSL https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/FiraCode.zip && unzip FiraCode.zip -d FiraCode
+  mkdir FiraCode && curl -sSLO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/FiraCode.zip && unzip FiraCode.zip -d FiraCode
   if [[ -z $MAC ]]; then
     cp VictorMono/*.ttf /usr/local/share/fonts/truetype/
     cp FiraCode/*.ttf /usr/local/share/fonts/truetype/
