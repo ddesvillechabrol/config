@@ -11,7 +11,6 @@ return require('packer').startup(function(use)
   use "folke/zen-mode.nvim"
   use "L3MON4D3/LuaSnip"
   use "saadparwaiz1/cmp_luasnip"
-  use "windwp/nvim-autopairs"
   use "windwp/nvim-ts-autotag"
   use "tpope/vim-surround"
   use "tpope/vim-repeat"
@@ -23,7 +22,6 @@ return require('packer').startup(function(use)
   -- git
   use "lewis6991/gitsigns.nvim"
   use "sindrets/diffview.nvim"
-  use "TimUntersberger/neogit"
 
   -- LSP
   use "neovim/nvim-lspconfig"

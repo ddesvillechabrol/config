@@ -103,7 +103,6 @@ if [[ -n $INSTALL_FISHDEPS ]]; then
   curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
   # install fish plugins
   fisher install PatrickF1/fzf.fish
-  fisher install jorgebucaran/autopair.fish
   fisher install catppuccin/fish
   fisher install danhper/fish-ssh-agent
   fish_config theme save "Catppuccin Mocha"

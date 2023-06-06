@@ -22,7 +22,6 @@ require("lualine").setup {
     lualine_b = {'branch', 'diff', {'diagnostics', symbols = {error = ' ', warn = ' ', info = '󰋽 ', hint = '󰌶 '},}}
   },
 }
-require("nvim-autopairs").setup()
 require("nvim-ts-autotag").setup()
 require("trouble").setup({
     signs = {
