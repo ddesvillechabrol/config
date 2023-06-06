@@ -1,4 +1,3 @@
-local neogit = require('neogit')
 local nnoremap = require('core.keymap').nnoremap
 
 require('gitsigns').setup {
@@ -11,15 +10,6 @@ require('gitsigns').setup {
   end
 }
 
-neogit.setup {
-  integrations = {
-    diffview = true
-  }
-}
-
-nnoremap("<leader>gs", function()
-  neogit.open()
-end)
 nnoremap("<leader>gh", ":DiffviewFileHistory %<CR>")
 nnoremap("<leader>vv", ":DiffviewOpen<CR>")
 nnoremap("<leader>vc", ":DiffviewClose<CR>")
