@@ -51,18 +51,18 @@ def main():
         print(f'local flavour = "{args.flavour}"', file=filout)
         filout.write(nvim_text)
 
-    # Alacritty
-    alacritty_conf = Path(f"{dotfiledir}/alacritty/.config/alacritty/alacritty.yml")
-    alacritty_text = []
-    with open(alacritty_conf, "r") as filin:
+    # Wezterm
+    wezterm_conf = Path(f"{dotfiledir}/wezterm/.wezterm.lua")
+    wezterm_text = []
+    with open(wezterm_conf) as filin:
         for line in filin:
-            if "alacritty/catppuccin/catppuccin-" in line:
-                alacritty_text.append(f"  - ~/.config/alacritty/catppuccin/catppuccin-{args.flavour}.yml")
-            elif args.opacity and "opacity:" in line:
-                alacritty_text.append(f"  opacity: {args.opacity}")
+            if line.startswith("config.color_scheme"):
+                wezterm_text.append(f"config.color_scheme = 'Catppuccin {args.flavour.capitalize()}'")
+            elif args.opacity and line.startswith("config.window_background_opacity"):
+                wezterm_text.append(f"config.window_background_opacity = {args.opacity}")
             else:
-                alacritty_text.append(line.rstrip())
-    alacritty_conf.write_text("\n".join(alacritty_text))
+                wezterm_text.append(line.rstrip())
+    wezterm_conf.write_text("\n".join(wezterm_text))
 
     # Starship
     starship_conf = Path(f"{dotfiledir}/starship/.config/starship.toml")

@@ -3,7 +3,7 @@
 To easily install, clone the repository to your home directory and run the installation script:
 
 ```
-git clone --recurse-submodules https://github.com/ddesvillechabrol/.dotfiles.git
+git clone https://github.com/ddesvillechabrol/.dotfiles.git
 ```
 
 # Change flavour
