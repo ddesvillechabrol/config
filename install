@@ -76,7 +76,6 @@ if [[ -n $INSTALL_DEPS ]]; then
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   rustup override set stable
   rustup update stable
-  cargo install alacritty
   cargo install starship --locked
 fi
 
@@ -118,7 +117,7 @@ if [[ -n $INSTALL_FONTS ]]; then
   fi
 fi
 
-CONF_FOLDERS=("alacritty" "fish" "vim" "tmux" "starship" "lazygit")
+CONF_FOLDERS=("wezterm" "fish" "vim" "tmux" "starship" "lazygit")
 for folder in "${CONF_FOLDERS[@]}"; do
   echo "Stow $folder"
   stow -D "$folder"

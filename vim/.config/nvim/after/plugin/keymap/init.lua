@@ -47,6 +47,10 @@ nnoremap("<C-j>", "<C-w>j")
 nnoremap("<C-k>", "<C-w>k")
 nnoremap("<C-l>", "<C-w>l")
 nnoremap("<C-h>", "<C-w>h")
+nnoremap("<Leader>b", "<C-^>")
+
+-- copy current file path
+nnoremap("<F4>", '<cmd>let @+=expand("%:p")<CR>')
 
 -- nvim-tree
 nnoremap("<C-n>", "<cmd>NvimTreeToggle<CR>")

@@ -33,4 +33,7 @@ require("trouble").setup({
         other = "󰗡"
     },
 })
+require("dashboard").setup({
+  change_to_vcs_root = true,
+})
 

@@ -45,6 +45,7 @@ require("catppuccin").setup({
           enabled = true,
           colored_indent_levels = false,
         },
+        dashboard = true,
     },
 })
 
