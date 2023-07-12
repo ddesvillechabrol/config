@@ -19,7 +19,8 @@ require("lualine").setup {
     theme = "catppuccin"
   },
   sections = {
-    lualine_b = {'branch', 'diff', {'diagnostics', symbols = {error = ' ', warn = ' ', info = '󰋽 ', hint = '󰌶 '},}}
+    lualine_b = {'branch', 'diff', {'diagnostics', symbols = {error = ' ', warn = ' ', info = '󰋽 ', hint = '󰌶 '},}},
+    lualine_c = {{'filename', path = 1}},
   },
 }
 require("nvim-ts-autotag").setup()
@@ -32,8 +33,5 @@ require("trouble").setup({
         information = "󰋽",
         other = "󰗡"
     },
-})
-require("dashboard").setup({
-  change_to_vcs_root = true,
 })
 

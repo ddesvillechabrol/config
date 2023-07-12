@@ -49,8 +49,6 @@ vim.g.mapleader = " "
 
 vim.opt.clipboard = "unnamedplus"
 
-vim.g.indent_blankline_filetype_exclude = {'dashboard'}
-
 vim.api.nvim_create_autocmd(
   {"BufNewFile", "BufRead"},
   { pattern = {"Snakefile", "*.smk", ".rules"}, command = "set filetype=snakemake nofoldenable shiftwidth=4 tabstop=4"}

@@ -18,7 +18,6 @@ return require('packer').startup(function(use)
   use "leafgarland/typescript-vim"
   use "peitalin/vim-jsx-typescript"
   use "Vimjas/vim-python-pep8-indent"
-  use "glepnir/dashboard-nvim"
 
   -- git
   use "lewis6991/gitsigns.nvim"
