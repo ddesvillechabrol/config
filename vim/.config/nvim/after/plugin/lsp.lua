@@ -84,6 +84,9 @@ local function config(_config)
   }, _config or {})
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 lsp.ruff_lsp.setup(config())
 
 lsp.pyright.setup(config({
@@ -105,6 +108,10 @@ lsp.pyright.setup(config({
 lsp.tsserver.setup(config())
 
 lsp.eslint.setup(config())
+
+lsp.html.setup(config({capabilities= capabilities}))
+
+lsp.cssls.setup(config({capabilities= capabilities}))
 
 lsp.tailwindcss.setup(config())
 
