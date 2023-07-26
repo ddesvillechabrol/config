@@ -1,60 +1,47 @@
-local Remap = require("core.keymap")
-local nnoremap = Remap.nnoremap
-local vnoremap = Remap.vnoremap
-local inoremap = Remap.inoremap
-local xnoremap = Remap.xnoremap
-local nmap = Remap.nmap
-
-
 -- greatest remap ever
-xnoremap("<leader>p", "\"_dP")
+vim.keymap.set("x", "<leader>p", [["_dP]])
 
--- next greatest remap ever : asbjornHaland
-nnoremap("<leader>y", "\"+y")
-vnoremap("<leader>y", "\"+y")
-nmap("<leader>Y", "\"+Y")
+vim.keymap.set("n", "<leader>d", [["_d]])
+vim.keymap.set("v", "<leader>d", [["_d]])
 
-nnoremap("<leader>d", "\"_d")
-vnoremap("<leader>d", "\"_d")
-
-nnoremap("Q", "<nop>")
-nnoremap("<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-nnoremap("<leader>f", function()
+vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+vim.keymap.set("n", "<leader>f", function()
     vim.lsp.buf.format()
 end)
-nnoremap("<leader>lf", function()
+vim.keymap.set("n", "<leader>lf", function()
     vim.lsp.buf.format({ timeout_ms = 5000 })
 end)
 
-nnoremap("<C-k>", "<cmd>cnext<CR>zz")
-nnoremap("<C-j>", "<cmd>cprev<CR>zz")
-nnoremap("<leader>k", "<cmd>lnext<CR>zz")
-nnoremap("<leader>j", "<cmd>lprev<CR>zz")
-nnoremap("<C-d>", "<C-d>zz")
-nnoremap("<C-u>", "<C-u>zz")
-nnoremap("n", "nzzzv")
-nnoremap("N", "Nzzzv")
+vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
 -- Switch between buffer
-nnoremap("<C-S-Down>", ":bnext<CR>")
-nnoremap("<C-S-Up>", ":bprevious<CR>")
+vim.keymap.set("n", "<C-S-Down>", "<cmd>bnext<CR>")
+vim.keymap.set("n", "<C-S-Up>", "<cmd>bprevious<CR>")
 
 -- Close buffer
-nnoremap("<C-c>", ":bp|bd #<CR>")
+vim.keymap.set("n", "<C-c>", "<cmd>bp|bd #<CR>")
 
 -- Switch between windows
-nnoremap("<C-j>", "<C-w>j")
-nnoremap("<C-k>", "<C-w>k")
-nnoremap("<C-l>", "<C-w>l")
-nnoremap("<C-h>", "<C-w>h")
-nnoremap("<Leader>b", "<C-^>")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<Leader>b", "<C-^>")
 
 -- copy current file path
-nnoremap("<F4>", '<cmd>let @+=expand("%:p")<CR>')
+vim.keymap.set("n", "<F4>", '<cmd>let @+=expand("%:p")<CR>')
 
 -- nvim-tree
-nnoremap("<C-n>", "<cmd>NvimTreeToggle<CR>")
+vim.keymap.set("n", "<C-n>", "<cmd>Lexplore<CR>")
 
 -- nvim-zen
-nnoremap("<Leader>z", "<cmd>ZenMode<CR>")
+vim.keymap.set("n", "<Leader>z", "<cmd>ZenMode<CR>")
 
