@@ -41,11 +41,11 @@ require("catppuccin").setup({
         treesitter = true,
         treesitter_context = true,
         lsp_trouble = true,
+        harpoon = true,
         indent_blankline = {
           enabled = true,
           colored_indent_levels = false,
         },
-        dashboard = true,
     },
 })
 

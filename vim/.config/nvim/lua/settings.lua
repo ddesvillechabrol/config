@@ -1,7 +1,3 @@
--- disable netrw at the very start of your init.lua (strongly advised)
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 vim.opt.guicursor = ""
 
 vim.opt.nu = true
@@ -48,9 +44,4 @@ vim.opt.colorcolumn = "120"
 vim.g.mapleader = " "
 
 vim.opt.clipboard = "unnamedplus"
-
-vim.api.nvim_create_autocmd(
-  {"BufNewFile", "BufRead"},
-  { pattern = {"Snakefile", "*.smk", ".rules"}, command = "set filetype=snakemake nofoldenable shiftwidth=4 tabstop=4"}
-)
 
