@@ -14,15 +14,28 @@ return {
   },
   {
     "folke/zen-mode.nvim",
-    config = function()
-      require("zen-mode").setup({
-        window = {
-          width = 0.8,
-        },
-        plugins = {
-          gitsigns = { enabled = true },
+    opts = {
+      window = {
+        width = 0.8,
+      },
+      plugins = {
+        gitsigns = { enabled = true },
+      },
+    },
+  },
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function ()
+      require("nvim-tree").setup({
+        view = {
+          width = 50,
         },
       })
     end,
-  },
+  }
 }

@@ -40,7 +40,7 @@ vim.keymap.set("n", "<Leader>b", "<C-^>")
 vim.keymap.set("n", "<F4>", '<cmd>let @+=expand("%:p")<CR>')
 
 -- nvim-tree
-vim.keymap.set("n", "<C-n>", "<cmd>Lexplore<CR>")
+vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>")
 
 -- nvim-zen
 vim.keymap.set("n", "<Leader>z", "<cmd>ZenMode<CR>")

@@ -1,3 +1,7 @@
+-- deactivate netrw to use neotree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.opt.guicursor = ""
 
 vim.opt.nu = true
