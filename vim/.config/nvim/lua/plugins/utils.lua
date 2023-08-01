@@ -18,9 +18,6 @@ return {
       window = {
         width = 0.8,
       },
-      plugins = {
-        gitsigns = { enabled = true },
-      },
     },
   },
   {

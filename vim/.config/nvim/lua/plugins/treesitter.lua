@@ -13,7 +13,8 @@ return {
           additional_vim_regex_highlighting = { "python" },
         },
         autotag = {
-          enable = true 
+          enable = true ,
+          enable_close_on_slash = false,
         },
         indent = {
           enable = true,
