@@ -44,4 +44,3 @@ vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>")
 
 -- nvim-zen
 vim.keymap.set("n", "<Leader>z", "<cmd>ZenMode<CR>")
-

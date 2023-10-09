@@ -1,62 +1,61 @@
 local flavour = "mocha"
 
 require("catppuccin").setup({
-    flavour = flavour, -- latte, frappe, macchiato, mocha
-    transparent_background = true,
-    term_colors = false,
-    dim_inactive = {
-        enabled = false,
-        shade = "dark",
-        percentage = 0.15,
+  flavour = flavour, -- latte, frappe, macchiato, mocha
+  transparent_background = true,
+  term_colors = false,
+  dim_inactive = {
+    enabled = false,
+    shade = "dark",
+    percentage = 0.15,
+  },
+  styles = {
+    comments = { "italic" },
+    conditionals = { "italic" },
+    loops = {},
+    functions = {},
+    keywords = {},
+    strings = {},
+    variables = {},
+    numbers = {},
+    booleans = {},
+    properties = {},
+    types = {},
+    operators = {},
+  },
+  color_overrides = {},
+  -- https://github.com/catppuccin/nvim/blob/main/lua/catppuccin/groups/editor.lua
+  custom_highlights = function(colors)
+    return {
+      LineNr = { fg = colors.surface2 },
+      CursorLineNr = { fg = colors.flamingo },
+      CursorLine = { bg = colors.none },
+    }
+  end,
+  integrations = {
+    neogit = true,
+    cmp = true,
+    gitsigns = true,
+    nvimtree = true,
+    telescope = true,
+    treesitter = true,
+    treesitter_context = true,
+    lsp_trouble = true,
+    harpoon = true,
+    indent_blankline = {
+      enabled = true,
+      colored_indent_levels = false,
     },
-    styles = {
-        comments = { "italic" },
-        conditionals = { "italic" },
-        loops = {},
-        functions = {},
-        keywords = {},
-        strings = {},
-        variables = {},
-        numbers = {},
-        booleans = {},
-        properties = {},
-        types = {},
-        operators = {},
-    },
-    color_overrides = {},
-    -- https://github.com/catppuccin/nvim/blob/main/lua/catppuccin/groups/editor.lua
-    custom_highlights = function(colors)
-      return {
-        LineNr = { fg = colors.surface2 },
-        CursorLineNr = { fg = colors.flamingo },
-        CursorLine = { bg = colors.none },
-      }
-    end,
-    integrations = {
-        neogit = true,
-        cmp = true,
-        gitsigns = true,
-        nvimtree = true,
-        telescope = true,
-        treesitter = true,
-        treesitter_context = true,
-        lsp_trouble = true,
-        harpoon = true,
-        indent_blankline = {
-          enabled = true,
-          colored_indent_levels = false,
-        },
-    },
+  },
 })
 
 
 local colors = require("catppuccin.palettes").get_palette(flavour)
 
 vim.cmd(string.format([[highlight IndentBlanklineIndent guifg=%s gui=nocombine]], colors.surface2))
-require("indent_blankline").setup {
-  char_highlight_list = {
-    "IndentBlanklineIndent",
-  }
+require("ibl").setup {
+  indent = { highlight = "IndentBlanklineIndent", char = "▏", smart_indent_cap = false },
+  scope = { enabled = false },
 }
 
 vim.api.nvim_set_hl(0, "@tag.attribute.tsx", { fg = colors.blue })
