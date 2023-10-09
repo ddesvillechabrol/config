@@ -119,6 +119,8 @@ lsp.bashls.setup(config())
 
 lsp.rust_analyzer.setup(config())
 
+lsp.lua_ls.setup(config())
+
 local formatting = require("null-ls").builtins.formatting
 local diagnostics = require("null-ls").builtins.diagnostics
 
