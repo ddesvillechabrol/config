@@ -7,6 +7,7 @@ end
 local luasnip = require("luasnip")
 local cmp = require("cmp")
 local lsp = require("lspconfig")
+local trouble = require("trouble")
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -77,12 +78,12 @@ local function config(_config)
         end,
         apply = true
       }) end)
-      vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end)
       vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end)
       vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end)
     end,
   }, _config or {})
 end
+vim.keymap.set("n", "<leader>vrr", function() trouble.toggle("lsp_references") end)
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true

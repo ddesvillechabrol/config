@@ -73,3 +73,8 @@ vim.api.nvim_set_hl(0, "@constructor.typescript", { fg = colors.peach })
 
 vim.cmd("colorscheme catppuccin")
 
+local signs = { Error = "", Warn = "", Hint = "󰌶", Info = "󰋽" }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
