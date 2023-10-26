@@ -15,7 +15,7 @@ cmp.setup({
     end,
   },
   completion = {
-    autocomplete = false
+    autocomplete = false,
   },
   performance = {
     max_view_entry = 200,
