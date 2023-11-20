@@ -1,6 +1,5 @@
 set -gx TERM "xterm-256color"
 set fish_prompt_pwd_dir_length 3
-starship init fish | source
 
 # set lazygit
 set -gx LG_CONFIG_FILE $HOME/.config/lazygit/config.yml
@@ -34,3 +33,4 @@ if begin; test $status -eq 1; and __ssh_agent_is_started; end
     ssh-add $HOME/.ssh/id_ed25519
 end
 
+starship init fish | source
