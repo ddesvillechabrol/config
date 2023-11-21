@@ -40,7 +40,7 @@ config.font_rules = {
   },
 }
 config.enable_tab_bar = true
-config.window_background_opacity = 0.6
+config.window_background_opacity = 0.8
 config.hide_tab_bar_if_only_one_tab = true
 
 wezterm.on('update-right-status', function(window, pane)
@@ -70,15 +70,14 @@ config.keys = {
   { key = "L", mods = "LEADER|SHIFT", action = act.AdjustPaneSize { "Right", 5 } },
   { key = "n", mods = "LEADER", action = act { ActivateTabRelative = 1 } },
   { key = "p", mods = "LEADER", action = act { ActivateTabRelative = -1 } },
-  { key = "&", mods = "LEADER", action = act { ActivateTab = 0 } },
-  { key = "é", mods = "LEADER", action = act { ActivateTab = 1 } },
-  { key = "\"", mods = "LEADER", action = act { ActivateTab = 2 } },
-  { key = "'", mods = "LEADER", action = act { ActivateTab = 3 } },
-  { key = "(", mods = "LEADER", action = act { ActivateTab = 4 } },
-  { key = "-", mods = "LEADER", action = act { ActivateTab = 5 } },
-  { key = "è", mods = "LEADER", action = act { ActivateTab = 6 } },
-  { key = "_", mods = "LEADER", action = act { ActivateTab = 7 } },
-  { key = "ç", mods = "LEADER", action = act { ActivateTab = 8 } },
+  { key = "1", mods = "LEADER|SHIFT", action = act { ActivateTab = 0 } },
+  { key = "2", mods = "LEADER|SHIFT", action = act { ActivateTab = 1 } },
+  { key = "3", mods = "LEADER|SHIFT", action = act { ActivateTab = 2 } },
+  { key = "4", mods = "LEADER|SHIFT", action = act { ActivateTab = 3 } },
+  { key = "5", mods = "LEADER|SHIFT", action = act { ActivateTab = 4 } },
+  { key = "6", mods = "LEADER|SHIFT", action = act { ActivateTab = 5 } },
+  { key = 'LeftArrow', mods = 'CTRL|SHIFT', action = act.MoveTabRelative(-1) },
+  { key = 'RightArrow', mods = 'CTRL|SHIFT', action = act.MoveTabRelative(1) },
   { key = "d", mods = "LEADER", action = act.CloseCurrentPane { confirm = true } },
   { key = "x", mods = "LEADER", action = act.CloseCurrentPane { confirm = true } },
   { key = 's', mods = "LEADER", action = act.ShowLauncherArgs { flags = 'WORKSPACES' } },
@@ -126,6 +125,22 @@ config.keys = {
       },
     },
   },
+  {
+    key = '9',
+    mods = 'CTRL',
+    action = act.PaneSelect {
+      alphabet = 'qsdfghjklm',
+    },
+  },
+  -- show the pane selection mode, but have it swap the active and selected panes
+  {
+    key = '0',
+    mods = 'CTRL',
+    action = act.PaneSelect {
+      alphabet = 'qsdfghjklm',
+      mode = 'SwapWithActive',
+    },
+  },
 }
 
 
@@ -168,6 +183,5 @@ if wezterm.gui then
     search_mode = search_mode_table,
   }
 end
-
 
 return config

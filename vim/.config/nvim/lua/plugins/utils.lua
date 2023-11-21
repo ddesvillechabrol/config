@@ -27,12 +27,19 @@ return {
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
-    config = function ()
+    config = function()
       require("nvim-tree").setup({
         view = {
           width = 50,
         },
       })
     end,
+  },
+  {
+    'numToStr/Comment.nvim',
+    opts = {
+      -- add any options here
+    },
+    lazy = false,
   }
 }

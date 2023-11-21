@@ -61,29 +61,18 @@ local function config(_config)
   return vim.tbl_deep_extend("force", {
     on_attach = function()
       vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end)
+      vim.keymap.set("n", "gD", function() vim.lsp.buf.declaration() end)
       vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end)
-      vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end)
-      vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end)
-      vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end)
-      vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end)
-      vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end)
-      vim.keymap.set("n", "<leader>vco", function() vim.lsp.buf.code_action({
-        filter = function(code_action)
-          if not code_action or not code_action.data then
-            return false
-          end
-
-          local data = code_action.data.id
-          return string.sub(data, #data - 1, #data) == ":0"
-        end,
-        apply = true
-      }) end)
-      vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end)
+      vim.keymap.set("n", "<leader>cd", function() vim.diagnostic.open_float() end)
+      vim.keymap.set("n", "<leader>dn", function() vim.diagnostic.goto_next() end)
+      vim.keymap.set("n", "<leader>dp", function() vim.diagnostic.goto_prev() end)
+      vim.keymap.set("n", "<leader>cr", function() vim.lsp.buf.rename() end)
       vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end)
+      vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end)
     end,
   }, _config or {})
 end
-vim.keymap.set("n", "<leader>vrr", function() trouble.toggle("lsp_references") end)
+vim.keymap.set("n", "gr", function() trouble.toggle("lsp_references") end)
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
