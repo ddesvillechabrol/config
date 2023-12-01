@@ -44,3 +44,9 @@ vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>")
 
 -- nvim-zen
 vim.keymap.set("n", "<Leader>z", "<cmd>ZenMode<CR>")
+
+-- neorgs
+vim.keymap.set("n", "<Leader>ot", "<cmd>Neorg workspace todo<CR>")
+vim.keymap.set("n", "<Leader>on", "<cmd>Neorg workspace note<CR>")
+vim.keymap.set("n", "<Leader>oc", "<cmd>Neorg return<CR>")
+
