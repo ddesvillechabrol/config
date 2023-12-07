@@ -8,12 +8,12 @@ add_newline = true
 
 [character]
 success_symbol = '[󰽰](mauve)'
-error_symbol = '[✗](red)'
+error_symbol = '[](red)'
 
 [directory]
 truncation_length = 5
 style = "bold teal"
-read_only = " "
+read_only = ""
 
 [git_branch]
 style = 'bold italic pink'
@@ -28,9 +28,9 @@ conflicted = '[${count}󰞇 ](red)'
 stashed = '[󰏗 ](maroon)'
 renamed = '[${count}󰨗 ](peach)'
 deleted = '${count} '
-ahead = '[↑${count}](flamingo)'
-diverged = '[↑${ahead_count}↓${behind_count}](flamingo)'
-behind = '[↓${count}](flamingo)'
+ahead = '[↑ ${count}](flamingo)'
+diverged = '[↑ ${ahead_count}↓${behind_count}](flamingo)'
+behind = '[↓ ${count}](flamingo)'
 
 # Disable the package module, hiding it from the prompt completely
 [package]

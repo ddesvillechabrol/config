@@ -15,11 +15,9 @@
 # fish
 # update theme -> `fish_config theme save "Catppuccin Latte"`
 import argparse
-import re
 import subprocess
 from pathlib import Path
 
-alacritty_theme = re.compile("alacritty/catppuccin/catppuccin")
 
 parser = argparse.ArgumentParser(
     description="Command line to change the catppuccin falvour for Alacritty, Nvim, Fish and Tmux."

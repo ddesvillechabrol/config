@@ -9,38 +9,50 @@ if wezterm.config_builder then
 end
 
 config.color_scheme = 'Catppuccin Mocha'
-config.font = wezterm.font { family = "FiraCode Nerd Font", weight = "Regular" }
-config.font_size = 11
+-- Option 1 with regular stretch
+--  - Firacode Nerd Font
+--  - VictorMono NF
+-- Option 2 with expanded stretch
+--  - Iosevka Nerd Font
+local main_font = "Iosevka Nerd Font"
+local main_stretch = "Expanded"
+local italic_font = main_font
+local italic_stretch = main_stretch
+config.font = wezterm.font { family = main_font, weight = "Regular", stretch = main_stretch}
+config.font_size = 12
 config.font_rules = {
   {
     intensity = 'Bold',
     italic = false,
     font = wezterm.font {
-      family = 'FiraCode Nerd Font',
+      family = main_font,
       weight = 'DemiBold',
+      stretch = main_stretch,
     },
   },
   {
     intensity = 'Bold',
     italic = true,
     font = wezterm.font {
-      family = 'VictorMono Nerd Font',
+      family = italic_font,
       weight = 'DemiBold',
       style = 'Italic',
+      stretch = italic_stretch,
     },
   },
   {
     italic = true,
     intensity = 'Normal',
     font = wezterm.font {
-      family = 'VictorMono Nerd Font',
-      weight = 'Medium',
+      family = italic_font,
+      weight = 'Regular',
       style = 'Italic',
+      stretch = italic_stretch,
     },
   },
 }
 config.enable_tab_bar = true
-config.window_background_opacity = 0.8
+config.window_background_opacity = 0.9
 config.hide_tab_bar_if_only_one_tab = true
 
 wezterm.on('update-right-status', function(window, pane)
@@ -81,6 +93,8 @@ config.keys = {
   { key = "d", mods = "LEADER", action = act.CloseCurrentPane { confirm = true } },
   { key = "x", mods = "LEADER", action = act.CloseCurrentPane { confirm = true } },
   { key = 's', mods = "LEADER", action = act.ShowLauncherArgs { flags = 'WORKSPACES' } },
+  -- open tab with git
+  { key = 'g', mods = "LEADER", action = wezterm.action.SpawnCommandInNewTab { args = { 'lazygit' }, }},
   -- Prompt for a name to use for a new workspace and switch to it.
   {
     key = 'W',
