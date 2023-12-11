@@ -7,4 +7,5 @@ vim/.config/nvim/plugin/packer_compiled.lua
 fish/.config/fish/*
 !fish/.config/fish/config.fish
 !fish/.config/fish/function/fish_prompt.fish
+font/*.ttf
 
