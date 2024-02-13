@@ -18,8 +18,8 @@ local main_font = "Iosevka Nerd Font"
 local main_stretch = "Expanded"
 local italic_font = main_font
 local italic_stretch = main_stretch
-config.font = wezterm.font { family = main_font, weight = "Regular", stretch = main_stretch}
-config.font_size = 12
+config.font = wezterm.font { family = main_font, weight = "Medium", stretch = main_stretch}
+config.font_size = 13
 config.font_rules = {
   {
     intensity = 'Bold',
@@ -45,14 +45,14 @@ config.font_rules = {
     intensity = 'Normal',
     font = wezterm.font {
       family = italic_font,
-      weight = 'Regular',
+      weight = 'Medium',
       style = 'Italic',
       stretch = italic_stretch,
     },
   },
 }
 config.enable_tab_bar = true
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.8
 config.hide_tab_bar_if_only_one_tab = true
 
 wezterm.on('update-right-status', function(window, pane)

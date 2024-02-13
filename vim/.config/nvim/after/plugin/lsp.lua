@@ -53,7 +53,7 @@ cmp.setup({
     { name = 'luasnip' },
   }, {
     { name = 'buffer' },
-    { name = 'path'},
+    { name = 'path' },
   })
 })
 
@@ -72,7 +72,7 @@ local function config(_config)
     end,
   }, _config or {})
 end
-vim.keymap.set("n", "gr", function() trouble.toggle("lsp_references") end)
+vim.keymap.set("n", "gr", function() trouble.open("lsp_references") end)
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -99,9 +99,9 @@ lsp.tsserver.setup(config())
 
 lsp.eslint.setup(config())
 
-lsp.html.setup(config({capabilities= capabilities}))
+lsp.html.setup(config({ capabilities = capabilities }))
 
-lsp.cssls.setup(config({capabilities= capabilities}))
+lsp.cssls.setup(config({ capabilities = capabilities }))
 
 lsp.tailwindcss.setup(config())
 
