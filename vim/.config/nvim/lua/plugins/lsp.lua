@@ -40,18 +40,8 @@ return {
       },
       {
         "<leader>gr",
-        "<cmd>Trouble lsp_references toggle focus=true<cr>",
+        "<cmd>Trouble lsp_references toggle<cr>",
         desc = "LSP References (Trouble)",
-      },
-      {
-        "<leader>gd",
-        "<cmd>Trouble lsp_definitions toggle focus=true<cr>",
-        desc = "LSP Definitions (Trouble)",
-      },
-      {
-        "<leader>gD",
-        "<cmd>Trouble lsp_declaration toggle focus=true<cr>",
-        desc = "LSP Declaration (Trouble)",
       },
       {
         "<leader>xl",
