@@ -52,8 +52,23 @@ config.font_rules = {
   },
 }
 config.enable_tab_bar = true
-config.window_background_opacity = 0.8
+config.window_background_opacity = 1
 config.hide_tab_bar_if_only_one_tab = true
+config.inactive_pane_hsb = {
+  saturation = 0.8,
+  brightness = 0.7,
+}
+config.background = {
+    {
+        source = { File = '/home/dimitri/Images/frieren_flower.jpg' }
+    },
+    {
+        source = { Color = "#1e1e2e" },
+        width = "100%",
+        height = "100%",
+        opacity = 0.8,
+    },
+}
 
 wezterm.on('update-right-status', function(window, pane)
   window:set_right_status(window:active_workspace())

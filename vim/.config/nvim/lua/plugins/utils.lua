@@ -48,7 +48,14 @@ return {
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require("oil").setup()
+      require("oil").setup(
+        {
+          lsp_file_methods = {
+            timeout_ms = 2000,
+            autosave_changes = true,
+          }
+        }
+      )
       vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Open parent directory" })
     end,
   },

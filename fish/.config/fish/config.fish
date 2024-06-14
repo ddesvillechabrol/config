@@ -23,14 +23,9 @@ set -gx PATH "$HOME/.local/bin" $PATH
 
 # set go
 set -gx PATH "/usr/local/go/bin" $PATH
+set -gx PATH "$HOME/go/bin" $PATH
 
 # set lua-language-server
 set -gx PATH "$HOME/.local/share/lua-language-server/bin" $PATH
-
-# add key if absent from ssh-agent
-ssh-add -l > /dev/null 2>&1
-if begin; test $status -eq 1; and __ssh_agent_is_started; end
-    ssh-add $HOME/.ssh/id_ed25519
-end
 
 starship init fish | source

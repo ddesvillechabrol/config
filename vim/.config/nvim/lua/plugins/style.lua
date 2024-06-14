@@ -1,7 +1,15 @@
 return {
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000},
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000
+  },
   "nvim-tree/nvim-web-devicons",
-  {"lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}},
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {}
+  },
   {
     "nvim-lualine/lualine.nvim",
     config = function()
@@ -10,8 +18,9 @@ return {
           theme = "catppuccin"
         },
         sections = {
-          lualine_b = {'branch', 'diff', {'diagnostics', symbols = {error = ' ', warn = ' ', info = '󰋽 ', hint = '󰌶 '},}},
-          lualine_c = {{'filename', path = 1}},
+          lualine_b = { 'branch', 'diff',
+            { 'diagnostics', symbols = { error = ' ', warn = ' ', info = '󰋽 ', hint = '󰌶 ' }, } },
+          lualine_c = { { 'filename', path = 1 } },
         },
       }
     end,
