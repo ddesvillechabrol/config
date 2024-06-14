@@ -8,7 +8,7 @@ return {
   "L3MON4D3/LuaSnip",
   {
     "github/copilot.vim",
-    config = function ()
+    config = function()
       vim.g.copilot_enabled = false
       vim.g.copilot_no_tab_map = true
       vim.keymap.set("i", "<C-j>", "<Plug>(copilot-next)", { noremap = false })
@@ -18,24 +18,51 @@ return {
         "i",
         "<C-l>",
         "copilot#Accept('<CR>')",
-        { noremap = true, silent = true, expr=true, replace_keycodes = false }
+        { noremap = true, silent = true, expr = true, replace_keycodes = false }
       )
     end,
   },
   "saadparwaiz1/cmp_luasnip",
   {
     "folke/trouble.nvim",
-    config = function ()
-      require("trouble").setup({
-        signs = {
-          -- icons / text used for a diagnostic
-          error = "",
-          warning = "",
-          hint = "󰌶",
-          information = "󰋽",
-          other = "󰗡"
-        },
-      })
-    end,
+    opts = {},
+    cmd = "Trouble",
+    keys = {
+      {
+        "<leader>xx",
+        "<cmd>Trouble diagnostics toggle focus=true<cr>",
+        desc = "Diagnostics (Trouble)",
+      },
+      {
+        "<leader>xX",
+        "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+        desc = "Buffer Diagnostics (Trouble)",
+      },
+      {
+        "<leader>gr",
+        "<cmd>Trouble lsp_references toggle focus=true<cr>",
+        desc = "LSP References (Trouble)",
+      },
+      {
+        "<leader>gd",
+        "<cmd>Trouble lsp_definitions toggle focus=true<cr>",
+        desc = "LSP Definitions (Trouble)",
+      },
+      {
+        "<leader>gD",
+        "<cmd>Trouble lsp_declaration toggle focus=true<cr>",
+        desc = "LSP Declaration (Trouble)",
+      },
+      {
+        "<leader>xl",
+        "<cmd>Trouble loclist toggle<cr>",
+        desc = "Location List (Trouble)",
+      },
+      {
+        "<leader>xq",
+        "<cmd>Trouble qflist toggle<cr>",
+        desc = "Quickfix List (Trouble)",
+      },
+    }
   },
 }

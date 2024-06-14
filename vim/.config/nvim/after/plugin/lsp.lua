@@ -60,8 +60,6 @@ cmp.setup({
 local function config(_config)
   return vim.tbl_deep_extend("force", {
     on_attach = function()
-      vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end)
-      vim.keymap.set("n", "gD", function() vim.lsp.buf.declaration() end)
       vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end)
       vim.keymap.set("n", "<leader>cd", function() vim.diagnostic.open_float() end)
       vim.keymap.set("n", "<leader>dn", function() vim.diagnostic.goto_next() end)
@@ -72,7 +70,6 @@ local function config(_config)
     end,
   }, _config or {})
 end
-vim.keymap.set("n", "gr", function() trouble.open("lsp_references") end)
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
