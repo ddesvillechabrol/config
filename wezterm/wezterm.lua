@@ -6,6 +6,7 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+config.default_prog = { '/usr/bin/fish', '-l' }
 config.color_scheme = 'Catppuccin Mocha'
 local main_font = "Iosevka Nerd Font"
 local main_stretch = "Expanded"
